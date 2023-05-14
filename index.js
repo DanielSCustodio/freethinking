@@ -11,8 +11,14 @@ const app = express();
 const connection = require('./db/connection');
 
 //Models
-const Post = require('./models/Post');
-const User = require('./models/User');
+/* const Post = require('./models/Post');
+const User = require('./models/User'); */
+
+//Routes
+const postsRoutes = require('./routes/postsRoutes');
+
+//Controller
+const PostController = require('./controllers/PostController');
 
 //Template Engine
 app.engine('handlebars', exphbs.engine());
@@ -59,6 +65,10 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+//Routes
+app.use('/posts', postsRoutes);
+app.use('/', PostController.showPosts);
 
 connection.sync(/* { force: true } */).then(() => {
   app.listen(process.env.PORT, () => {
