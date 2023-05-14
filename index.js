@@ -6,7 +6,13 @@ const flash = require('express-flash');
 require('custom-env').env('development.local');
 
 const app = express();
+
+//Conexão
 const connection = require('./db/connection');
+
+//Models
+const Post = require('./models/Post');
+const User = require('./models/User');
 
 //Template Engine
 app.engine('handlebars', exphbs.engine());
@@ -54,7 +60,7 @@ app.use((req, res, next) => {
   next();
 });
 
-connection.sync().then(() => {
+connection.sync(/* { force: true } */).then(() => {
   app.listen(process.env.PORT, () => {
     console.log(`Aplicação em execução na porta ${process.env.PORT}`);
   });
