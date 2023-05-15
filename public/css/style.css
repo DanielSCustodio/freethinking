@@ -1,0 +1,140 @@
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #6c31bd;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8A42F2;
+  border-radius: 50px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #3d4040;
+}
+
+html {
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #e6e5e5;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.8s;
+  color: #3d4040;
+  font-weight: 500;
+}
+a:hover {
+  color: #8A42F2;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+.container-body {
+  height: 100vh;
+}
+
+#nav-bar {
+  background-color: #dfdfdf;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid rgba(139, 66, 242, 0.6117647059);
+}
+#nav-bar .container-menu {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#nav-bar .container-menu img {
+  height: 80px;
+}
+#nav-bar .container-menu ul {
+  display: flex;
+  gap: 1rem;
+}
+#nav-bar .container-menu ul li a {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+#footer {
+  background-color: #6c31bd;
+  padding: 2rem 0;
+}
+#footer .container-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#footer .container-footer img {
+  height: 80px;
+}
+#footer .container-footer h6, #footer .container-footer p, #footer .container-footer span {
+  color: #f9f9f9;
+  margin: 0;
+}
+#footer .container-footer h6, #footer .container-footer span {
+  font-weight: 200;
+  letter-spacing: 0.8rem;
+}
+#footer .container-footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+#footer .container-footer .social-network {
+  flex-direction: row;
+}
+#footer .container-footer .social-network i {
+  font-size: 1.5rem;
+  color: #f9f9f9;
+  transition: 0.8s;
+}
+#footer .container-footer .social-network i:hover {
+  color: rgba(255, 255, 255, 0.6470588235);
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin: 0;
+  color: #8A42F2;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */
