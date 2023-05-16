@@ -16,9 +16,11 @@ const User = require('./models/User'); */
 
 //Routes
 const postsRoutes = require('./routes/postsRoutes');
+const authRotes = require('./routes/authRotes');
 
 //Controller
 const PostController = require('./controllers/PostController');
+//const NotFoundController = require('./controllers/NotFoundController');
 
 //Template Engine
 app.engine('handlebars', exphbs.engine());
@@ -68,7 +70,9 @@ app.use((req, res, next) => {
 
 //Routes
 app.use('/posts', postsRoutes);
+app.use('/', authRotes);
 app.use('/', PostController.showPosts);
+//app.use('/', NotFoundController.notfound);
 
 connection.sync(/* { force: true } */).then(() => {
   app.listen(process.env.PORT, () => {

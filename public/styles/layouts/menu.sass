@@ -2,4 +2,28 @@
 @use './mixins'
 @use '../base/base-mixins'
 
+.container-body
+  height: 100vh
+
+#nav-bar
+  background-color: transparent
+  padding: 1rem 0
+  position: fixed
+  width: 100%
+  border-bottom: 1px solid variables.$border-color
+
+  .container-menu
+    @include mixins.center-content()
     
+    img
+      height: 80px
+
+    ul
+      display: flex
+      gap: 1rem
+
+      li
+        a
+          font-size: 1.3rem
+          font-weight: 600
+
