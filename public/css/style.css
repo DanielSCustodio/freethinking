@@ -57,12 +57,54 @@ ul {
   margin: 0;
 }
 
+#footer {
+  background-color: #6c31bd;
+  padding: 2rem 0;
+}
+
+.container-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-footer img {
+  height: 80px;
+}
+.container-footer h6, .container-footer p, .container-footer span {
+  color: #f9f9f9;
+  margin: 0;
+}
+.container-footer h6, .container-footer span {
+  font-weight: 200;
+  letter-spacing: 0.5rem;
+}
+.container-footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.container-footer .social-network {
+  flex-direction: row;
+}
+.container-footer .social-network i {
+  font-size: 1.3rem;
+  color: #f9f9f9;
+  transition: 0.8s;
+}
+.container-footer .social-network i:hover {
+  color: rgba(255, 255, 255, 0.6470588235);
+}
+
 .container-body {
   height: 100vh;
 }
 
 #nav-bar {
-  background-color: #dfdfdf;
+  background-color: transparent;
   padding: 1rem 0;
   position: fixed;
   width: 100%;
@@ -85,47 +127,6 @@ ul {
 #nav-bar .container-menu ul li a {
   font-size: 1.3rem;
   font-weight: 600;
-}
-
-#footer {
-  background-color: #6c31bd;
-  padding: 2rem 0;
-}
-#footer .container-footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#footer .container-footer img {
-  height: 80px;
-}
-#footer .container-footer h6, #footer .container-footer p, #footer .container-footer span {
-  color: #f9f9f9;
-  margin: 0;
-}
-#footer .container-footer h6, #footer .container-footer span {
-  font-weight: 200;
-  letter-spacing: 0.8rem;
-}
-#footer .container-footer div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-}
-#footer .container-footer .social-network {
-  flex-direction: row;
-}
-#footer .container-footer .social-network i {
-  font-size: 1.5rem;
-  color: #f9f9f9;
-  transition: 0.8s;
-}
-#footer .container-footer .social-network i:hover {
-  color: rgba(255, 255, 255, 0.6470588235);
 }
 
 .title {
