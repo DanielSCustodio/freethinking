@@ -2,21 +2,26 @@
 @use './mixins'
 @use '../base/base-mixins'
 
-.container-body
-  height: 100vh
-
 #nav-bar
-  background-color: transparent
+  background-color: variables.$primary-color
   padding: 1rem 0
   position: fixed
   width: 100%
   border-bottom: 1px solid variables.$border-color
+  z-index: 1
 
   .container-menu
     @include mixins.center-content()
-    
+    i
+      font-size: 2rem
+      color: variables.$second-text-color
+      transition: .8s
+
+      &:hover
+        color: variables.$bg-second-color
+
     img
-      height: 80px
+      height: 2rem
 
     ul
       display: flex
@@ -26,4 +31,7 @@
         a
           font-size: 1.3rem
           font-weight: 600
+          color: variables.$second-text-color
 
+          &:hover
+            color: variables.$bg-second-color
