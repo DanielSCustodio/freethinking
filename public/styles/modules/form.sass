@@ -1,3 +1,37 @@
 @use '../base/variables'
 @use '../layouts/mixins'
 @use '../base/base-mixins'
+
+.title-container
+  display: flex
+  padding: 0.5rem
+  background-color: variables.$second-color
+  width: 450px
+  align-items: center
+
+  h2
+    color: variables.$second-text-color
+  img
+    max-width: 50px
+
+.form
+  background-color: variables.$bg-second-color
+  padding: 0.5rem
+  width: 450px
+
+  p
+    margin-left: 3.5rem
+    margin-top: 2rem
+    margin-bottom: 1rem
+
+.form-control
+  padding: 1rem
+
+  i
+    margin-right: 1rem
+    color: variables.$second-color
+    font-size: 1.3rem
+
+  input, textarea
+    padding: 1rem
+    width: 80%

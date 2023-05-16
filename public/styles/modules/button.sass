@@ -1,1 +1,16 @@
 @use '../base/variables'
+
+.btn
+  padding: 1rem 2rem
+  margin-left: 3.5rem
+  margin-top: 2rem
+  cursor: pointer
+  transition: .8s
+  border: 1px solid variables.$primary-color
+  text-transform: uppercase
+  background-color: variables.$second-color
+  color: variables.$second-text-color
+  border-radius: 6px
+
+  &:hover
+    background-color: variables.$primary-color
