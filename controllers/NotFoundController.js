@@ -1,5 +1,5 @@
 module.exports = class NotFoundController {
-  static async notfound(req, res) {
+  static async notfound(_req, res) {
     res.render('404');
   }
 };

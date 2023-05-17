@@ -39,7 +39,7 @@ app.use(
 
 app.use(express.json());
 
-//Sessão
+//Seção
 app.use(
   session({
     name: 'session',

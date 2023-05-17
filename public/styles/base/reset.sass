@@ -4,11 +4,10 @@ body::-webkit-scrollbar
   width: 10px
 
 body::-webkit-scrollbar-track
-  background: variables.$second-color
+  background: variables.$bg-primary-color
 
 body::-webkit-scrollbar-thumb
-  background-color: variables.$primary-color
-  border-radius: 50px
+  background-color: variables.$border-color
 
 *
   padding: 0
@@ -35,14 +34,14 @@ a
     color: variables.$primary-color
 
 input, textarea
-  border: none
+  border: 1px solid variables.$border-color
   outline: none
   resize: none
   border-radius: 2px
 
 textarea:focus, input:focus, select:focus
   box-shadow: 0 0 0 0
-  border: 0 none
+  border: 1px solid variables.$primary-color
   outline: 0
 
 ul

@@ -3,12 +3,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #6c31bd;
+  background: #e6e5e5;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #8A42F2;
-  border-radius: 50px;
+  background-color: rgba(177, 131, 242, 0.3921568627);
 }
 
 * {
@@ -40,7 +39,7 @@ a:hover {
 }
 
 input, textarea {
-  border: none;
+  border: 1px solid rgba(177, 131, 242, 0.3921568627);
   outline: none;
   resize: none;
   border-radius: 2px;
@@ -48,7 +47,7 @@ input, textarea {
 
 textarea:focus, input:focus, select:focus {
   box-shadow: 0 0 0 0;
-  border: 0 none;
+  border: 1px solid #8A42F2;
   outline: 0;
 }
 
@@ -58,7 +57,7 @@ ul {
 }
 
 #footer {
-  background-color: #6c31bd;
+  background-color: #dfdfdf;
   padding: 2rem 0;
   z-index: 1;
 }
@@ -74,12 +73,12 @@ ul {
   height: 80px;
 }
 .container-footer h6, .container-footer p, .container-footer span {
-  color: #f9f9f9;
+  color: #3d4040;
   margin: 0;
 }
 .container-footer h6, .container-footer span {
   font-weight: 200;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.3rem;
 }
 .container-footer div {
   display: flex;
@@ -93,16 +92,16 @@ ul {
 }
 .container-footer .social-network i {
   font-size: 1.3rem;
-  color: #f9f9f9;
+  color: #8A42F2;
   transition: 0.8s;
 }
 .container-footer .social-network i:hover {
-  color: rgba(255, 255, 255, 0.6470588235);
+  color: #6c31bd;
 }
 
 #nav-bar {
   background-color: #8A42F2;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   position: fixed;
   width: 100%;
   border-bottom: 1px solid rgba(177, 131, 242, 0.3921568627);
@@ -116,7 +115,7 @@ ul {
   align-items: center;
 }
 #nav-bar .container-menu i {
-  font-size: 2rem;
+  font-size: 1.3rem;
   color: #f9f9f9;
   transition: 0.8s;
 }
@@ -124,14 +123,14 @@ ul {
   color: #dfdfdf;
 }
 #nav-bar .container-menu img {
-  height: 2rem;
+  height: 1.5rem;
 }
 #nav-bar .container-menu ul {
   display: flex;
   gap: 1rem;
 }
 #nav-bar .container-menu ul li a {
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #f9f9f9;
 }
@@ -143,8 +142,16 @@ ul {
   height: 100vh;
 }
 
+.message {
+  margin: 0 auto;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  margin: 0 3.6rem;
+  color: #dd4747;
+}
+
 .auth-container {
-  height: 100vh;
+  padding-top: 6%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -186,7 +193,7 @@ ul {
   color: #f9f9f9;
 }
 .title-container img {
-  max-width: 50px;
+  max-width: 40px;
 }
 
 .form {
