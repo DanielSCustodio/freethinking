@@ -3,10 +3,10 @@
     <img src='/image/icon-white.svg' alt='Logo Freethinking' />
     <h2 class='title'> Junte-se ao Freethinking </h2>
   </div>
-  <form action='/register' method='post' class="form">
+  <form action='/register' method='post' class='form'>
     <div class='form-control'>
       <i class='bi bi-person'></i>
-      <input type='text' name='name' placeholder='Digite seu nome' />
+      <input type='text' name='name' placeholder='Digite seu nome' required />
     </div>
     <div class='form-control'>
       <i class='bi bi-envelope'></i>
@@ -14,11 +14,17 @@
         type='email'
         name='email'
         placeholder='Digite o seu melhor e-mail'
+        required
       />
     </div>
     <div class='form-control'>
       <i class='bi bi-lock'></i>
-      <input type='password' name='password' placeholder='Crie uma senha' />
+      <input
+        type='password'
+        name='password'
+        placeholder='Crie uma senha'
+        required
+      />
     </div>
     <div class='form-control'>
       <i class='bi bi-lock'></i>
@@ -26,9 +32,16 @@
         type='password'
         name='confirmpassword'
         placeholder='Confirme a sua senha'
+        required
       />
     </div>
-    <input type='submit' value='Cadastrar' class="btn" />
+    {{#if messages.content}}
+      <div class='message'>
+        {{messages.content}}
+      </div>
+    {{/if}}
+    <input type='submit' value='Cadastrar' class='btn' />
     <p>Já tem conta? <a href='/login'>Entrar</a></p>
+
   </form>
 </div>
