@@ -15,14 +15,38 @@ module.exports = class AuthController {
 
     if (password !== confirmpassword) {
       req.flash(
-        'content',
+        'conflict',
         'Ops! Houve um pequeno desentendimento entre a senha e a sua confirmação. Tente novamente!',
       );
 
-      req.flash('test', 'Teste');
       res.render('auth/register');
 
       return;
+    }
+
+    const checkIfUserExists = await User.findOne({ where: { email: email } });
+
+    if (checkIfUserExists) {
+      req.flash('conflict', 'Email já cadastrado');
+      res.render('auth/register');
+      return;
+    }
+
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(password, salt);
+
+    const user = {
+      name,
+      email,
+      password: hashedPassword,
+    };
+
+    try {
+      await User.create(user);
+      req.flash('ok', 'Cadasttro realizado com sucesso');
+      res.redirect('/');
+    } catch (err) {
+      console.log(err);
     }
   }
 };
