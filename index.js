@@ -11,8 +11,8 @@ const app = express();
 const connection = require('./db/connection');
 
 //Models
-/* const Post = require('./models/Post');
-const User = require('./models/User'); */
+const Post = require('./models/Post');
+const User = require('./models/User');
 
 //Routes
 const postsRoutes = require('./routes/postsRoutes');
@@ -20,6 +20,7 @@ const authRotes = require('./routes/authRotes');
 
 //Controller
 const PostController = require('./controllers/PostController');
+const { log } = require('console');
 //const NotFoundController = require('./controllers/NotFoundController');
 
 //Template Engine
@@ -61,6 +62,7 @@ app.use(
 
 //Mensagens Flash
 app.use(flash());
+
 app.use((req, res, next) => {
   if (req.session.userid) {
     res.locals.session = req.session;
@@ -71,11 +73,16 @@ app.use((req, res, next) => {
 //Routes
 app.use('/posts', postsRoutes);
 app.use('/', authRotes);
-app.use('/', PostController.showPosts);
+app.get('/', (req, res) => {
+  res.render('posts/home');
+});
 //app.use('/', NotFoundController.notfound);
 
-connection.sync(/* { force: true } */).then(() => {
-  app.listen(process.env.PORT, () => {
-    console.log(`Aplicação em execução na porta ${process.env.PORT}`);
-  });
-});
+connection
+  .sync(/* { force: true } */)
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(`Aplicação em execução na porta ${process.env.PORT}`);
+    });
+  })
+  .catch((err) => log(err));
