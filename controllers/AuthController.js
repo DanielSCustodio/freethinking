@@ -15,19 +15,17 @@ module.exports = class AuthController {
 
     if (password !== confirmpassword) {
       req.flash(
-        'conflict',
+        'message',
         'Ops! Houve um pequeno desentendimento entre a senha e a sua confirmação. Tente novamente!',
       );
-
       res.render('auth/register');
-
       return;
     }
 
     const checkIfUserExists = await User.findOne({ where: { email: email } });
 
     if (checkIfUserExists) {
-      req.flash('conflict', 'Email já cadastrado');
+      req.flash('message', 'Email já cadastrado');
       res.render('auth/register');
       return;
     }
@@ -42,9 +40,12 @@ module.exports = class AuthController {
     };
 
     try {
-      await User.create(user);
-      req.flash('ok', 'Cadasttro realizado com sucesso');
-      res.redirect('/');
+      const createdUser = await User.create(user);
+      req.session.userid = createdUser.id;
+      req.flash('message', 'Cadastro realizado com sucesso');
+      req.session.save(() => {
+        res.redirect('/');
+      });
     } catch (err) {
       console.log(err);
     }
