@@ -20,7 +20,6 @@ const authRotes = require('./routes/authRotes');
 
 //Controller
 const PostController = require('./controllers/PostController');
-const { log } = require('console');
 //const NotFoundController = require('./controllers/NotFoundController');
 
 //Template Engine
@@ -53,8 +52,8 @@ app.use(
     }),
     cookie: {
       secure: false,
-      maxAge: 360000,
-      expires: new Date(Date.now() + 360000),
+      maxAge: 360000000,
+      expires: new Date(Date.now() + 360000000), // 5 dias
       httpOnly: true,
     },
   }),
@@ -79,7 +78,9 @@ app.get('/', (req, res) => {
 //app.use('/', NotFoundController.notfound);
 
 connection
-  .sync(/* { force: true } */)
+  .sync({
+    /* force: true*/
+  })
   .then(() => {
     app.listen(process.env.PORT, () => {
       console.log(`Aplicação em execução na porta ${process.env.PORT}`);

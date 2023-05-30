@@ -6,7 +6,11 @@ module.exports = class AuthController {
     res.render('auth/login');
   }
 
-  static register(_req, res) {
+  static register(req, res) {
+    if (req.session.userid) {
+      res.redirect('/');
+      return;
+    }
     res.render('auth/register');
   }
 
