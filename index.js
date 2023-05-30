@@ -86,4 +86,4 @@ connection
       console.log(`Aplicação em execução na porta ${process.env.PORT}`);
     });
   })
-  .catch((err) => log(err));
+  .catch((err) => console.log(err));
