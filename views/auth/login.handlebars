@@ -1,1 +1,35 @@
-<h1>Login</h1>
+<div class='auth-container'>
+  <div class='title-container'>
+    <img src='/image/icon-white.svg' alt='Logo Freethinking' />
+    <h2 class='title'> Entrar no Freethinking </h2>
+  </div>
+  <form action='/login' method='post' class='form'>
+
+    <div class='form-control'>
+      <i class='bi bi-envelope'></i>
+      <input
+        type='email'
+        name='email'
+        placeholder='Digite o seu e-mail'
+        required
+      />
+    </div>
+    <div class='form-control'>
+      <i class='bi bi-lock'></i>
+      <input
+        type='password'
+        name='password'
+        placeholder='Disgite a sua senha'
+        required
+      />
+    </div>
+    {{#if messages.error-login}}
+      <div class='message'>
+        {{messages.error-login}}
+      </div>
+    {{/if}}
+    <input type='submit' value='Entrar' class='btn' />
+    <p>Não tem uma conta? <a href='/register'>Registrar</a></p>
+
+  </form>
+</div>

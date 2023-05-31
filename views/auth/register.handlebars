@@ -1,7 +1,7 @@
 <div class='auth-container'>
   <div class='title-container'>
     <img src='/image/icon-white.svg' alt='Logo Freethinking' />
-    <h2 class='title'> Junte-se ao Freethinking </h2>
+    <h2 class='title'>Junte-se ao Freethinking </h2>
   </div>
   <form action='/register' method='post' class='form'>
     <div class='form-control'>
@@ -35,9 +35,9 @@
         required
       />
     </div>
-    {{#if messages.message}}
+    {{#if messages.error-register}}
       <div class='message'>
-        {{messages.message}}
+        {{messages.error-register}}
       </div>
     {{/if}}
     <input type='submit' value='Cadastrar' class='btn' />

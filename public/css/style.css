@@ -26,6 +26,7 @@ html {
 
 body {
   background-color: #e6e5e5;
+  height: 100vh;
 }
 
 a {
@@ -139,7 +140,7 @@ ul {
 }
 
 .container-body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .message {
@@ -148,6 +149,21 @@ ul {
   font-size: 0.8rem;
   margin: 0 3.6rem;
   color: #dd4747;
+}
+
+.successful-access {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 6%;
+  max-width: 30%;
+}
+.successful-access p {
+  padding: 1rem;
+  border: 1px solid rgba(177, 131, 242, 0.3921568627);
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: #8A42F2;
 }
 
 .auth-container {
