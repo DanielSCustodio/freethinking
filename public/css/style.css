@@ -175,6 +175,16 @@ ul {
   align-items: center;
 }
 
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 6%;
+}
+
 .title {
   font-size: 1.8rem;
   margin: 0;
@@ -196,6 +206,7 @@ ul {
 }
 .btn:hover {
   background-color: #8A42F2;
+  color: #f9f9f9;
 }
 
 .title-container {

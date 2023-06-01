@@ -1,0 +1,8 @@
+@use '../base/variables'
+@use './mixins'
+@use '../base/base-mixins'
+
+.dashboard-container
+  @include mixins.center-content()
+  flex-direction: column
+  padding-top: variables.$top-distance
