@@ -6,7 +6,11 @@ module.exports = class PostController {
     res.render('posts/home');
   }
 
-  static async dashboard(req, res) {
+  static async dashboard(_req, res) {
     res.render('posts/dashboard');
+  }
+
+  static createPost(_req, res) {
+    res.render('posts/create');
   }
 };

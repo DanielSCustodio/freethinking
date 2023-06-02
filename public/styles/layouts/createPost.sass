@@ -2,6 +2,10 @@
 @use './mixins'
 @use '../base/base-mixins'
 
-.dashboard-container
+.post-form-container
   @include mixins.center-content()
   flex-direction: column
+
+  .form-control
+    margin: 0 auto
+    text-align: center

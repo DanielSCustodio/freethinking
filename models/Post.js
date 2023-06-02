@@ -3,7 +3,7 @@ const db = require('../db/connection');
 const User = require('./User');
 
 const Post = db.define('Post', {
-  title: {
+  content: {
     type: DataTypes.STRING,
     allowNull: false,
     require: true,
