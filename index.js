@@ -5,22 +5,21 @@ const FileStore = require('session-file-store')(session);
 const flash = require('express-flash');
 require('custom-env').env('development.local');
 
-const app = express();
-
-//Conexão
-const connection = require('./db/connection');
-
 //Models
-const Post = require('./models/Post');
-const User = require('./models/User');
+/* const Post = require('./models/Post');
+const User = require('./models/User'); */
 
 //Routes
 const postsRoutes = require('./routes/postsRoutes');
 const authRotes = require('./routes/authRotes');
 
-//Controller
-const PostController = require('./controllers/PostController');
-//const NotFoundController = require('./controllers/NotFoundController');
+//middleware
+const { checkAuth } = require('./helpers/auth');
+
+const app = express();
+
+//Conexão
+const connection = require('./db/connection');
 
 //Template Engine
 app.engine('handlebars', exphbs.engine());
@@ -72,14 +71,14 @@ app.use((req, res, next) => {
 //Routes
 app.use('/posts', postsRoutes);
 app.use('/', authRotes);
-app.get('/', (req, res) => {
+app.get('/', checkAuth, (req, res) => {
   res.render('posts/home');
 });
 //app.use('/', NotFoundController.notfound);
 
 connection
   .sync({
-    /* force: true*/
+    /* force: true, */
   })
   .then(() => {
     app.listen(process.env.PORT, () => {
