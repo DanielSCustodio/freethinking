@@ -59,7 +59,7 @@ ul {
 
 #footer {
   background-color: #dfdfdf;
-  padding: 2rem 0;
+  padding: 1rem 0;
   z-index: 1;
 }
 
@@ -70,6 +70,8 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0;
+  width: 100%;
 }
 .container-footer img {
   height: 80px;
@@ -122,6 +124,7 @@ ul {
   font-size: 1.3rem;
   color: #f9f9f9;
   transition: 0.8s;
+  margin-left: 7rem;
 }
 #nav-bar .container-menu i:hover {
   color: #dfdfdf;
@@ -188,7 +191,7 @@ ul {
   flex-direction: column;
 }
 
-.post-form-container {
+.create-post-container {
   max-width: 1200px;
   padding-top: 6%;
   margin: 0 auto;
@@ -197,9 +200,28 @@ ul {
   align-items: center;
   flex-direction: column;
 }
-.post-form-container .form-control {
+.create-post-container form {
+  max-width: 1200px;
+  padding-top: 6%;
   margin: 0 auto;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.create-post-container form textarea {
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(177, 131, 242, 0.3921568627);
+  overflow: hidden;
+}
+.create-post-container form .create-post-btn {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+.create-post-container form .create-post-btn input {
+  margin-left: 0;
 }
 
 .title {
@@ -210,7 +232,7 @@ ul {
 }
 
 .btn {
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   margin-left: 3.5rem;
   margin-top: 2rem;
   cursor: pointer;
@@ -219,7 +241,7 @@ ul {
   text-transform: uppercase;
   background-color: #6c31bd;
   color: #f9f9f9;
-  border-radius: 6px;
+  border-radius: 80px;
 }
 .btn:hover {
   background-color: #8A42F2;

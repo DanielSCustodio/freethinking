@@ -2,10 +2,26 @@
 @use './mixins'
 @use '../base/base-mixins'
 
-.post-form-container
+.create-post-container
   @include mixins.center-content()
   flex-direction: column
 
-  .form-control
-    margin: 0 auto
-    text-align: center
+  form
+    @include mixins.center-content()
+    flex-direction: column
+
+    textarea
+      background: none
+      border: none
+      border-bottom: 1px solid variables.$border-color
+      overflow: hidden
+
+    .create-post-btn
+      width: 100%
+      display: flex
+      justify-content: start
+
+      input
+        margin-left: 0
+
+
