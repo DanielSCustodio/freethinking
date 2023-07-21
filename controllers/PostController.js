@@ -1,17 +1,22 @@
 const Post = require('../models/Post');
-/*const User = require('../models/User'); */
+const User = require('../models/User');
 
 module.exports = class PostController {
   static showPosts(_req, res) {
     res.render('posts/home');
   }
 
-  static dashboard(_req, res) {
-    res.render('posts/dashboard');
-  }
+  static async dashboard(req, res) {
+    const { userid } = req.session;
 
-  static createPost(_req, res) {
-    res.render('posts/create');
+    const user = await User.findOne({
+      where: {
+        id: userid,
+      },
+      include: Post,
+    });
+
+    res.render('posts/dashboard', { user: user.get({ plain: true }) });
   }
 
   static async createPostSave(req, res) {

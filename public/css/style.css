@@ -31,7 +31,7 @@ body {
 
 a {
   text-decoration: none;
-  transition: 0.8s;
+  transition: 0.5s;
   color: #3d4040;
   font-weight: 500;
 }
@@ -61,6 +61,7 @@ ul {
   background-color: #dfdfdf;
   padding: 1rem 0;
   z-index: 1;
+  margin-top: 6%;
 }
 
 .container-footer {
@@ -97,7 +98,7 @@ ul {
 .container-footer .social-network i {
   font-size: 1.3rem;
   color: #8A42F2;
-  transition: 0.8s;
+  transition: 0.5s;
 }
 .container-footer .social-network i:hover {
   color: #6c31bd;
@@ -123,7 +124,7 @@ ul {
 #nav-bar .container-menu i {
   font-size: 1.3rem;
   color: #f9f9f9;
-  transition: 0.8s;
+  transition: 0.5s;
   margin-left: 7rem;
 }
 #nav-bar .container-menu i:hover {
@@ -189,6 +190,58 @@ ul {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  align-items: flex-start;
+}
+.dashboard-container li {
+  box-shadow: 1px 1px 2px rgba(177, 131, 242, 0.3921568627);
+  margin-bottom: 2rem;
+  border-radius: 4px;
+  padding: 1rem;
+}
+.dashboard-container .dashboard-post {
+  max-width: 1200px;
+  padding-top: 6%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+.dashboard-container .dashboard-post .actions {
+  display: flex;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+.dashboard-container .dashboard-post .actions .bi {
+  font-size: 1.3rem;
+  color: #8A42F2;
+  transition: 0.5s;
+}
+.dashboard-container .dashboard-post .actions .bi:hover {
+  color: #6c31bd;
+}
+.dashboard-container .dashboard-post .actions button {
+  border: 0;
+}
+.dashboard-container .dashboard-post .actions button:hover {
+  cursor: pointer;
+}
+.dashboard-container .label {
+  font-weight: 500;
+}
+.dashboard-container .post-date {
+  display: flex;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+.dashboard-container .post-date span {
+  color: rgba(115, 110, 110, 0.7529411765);
+}
+.dashboard-container .title-container-dashboard {
+  margin-bottom: 1rem;
+}
+.dashboard-container .title-container-dashboard h1 {
+  color: #8A42F2;
 }
 
 .create-post-container {
@@ -224,6 +277,20 @@ ul {
   margin-left: 0;
 }
 
+.title-container {
+  display: flex;
+  padding: 0.5rem;
+  background-color: #6c31bd;
+  width: 450px;
+  align-items: center;
+}
+.title-container h2, .title-container h1 {
+  color: #f9f9f9;
+}
+.title-container img {
+  max-width: 40px;
+}
+
 .title {
   font-size: 1.8rem;
   margin: 0;
@@ -236,7 +303,7 @@ ul {
   margin-left: 3.5rem;
   margin-top: 2rem;
   cursor: pointer;
-  transition: 0.8s;
+  transition: 0.5s;
   border: 1px solid #8A42F2;
   text-transform: uppercase;
   background-color: #6c31bd;
@@ -246,20 +313,6 @@ ul {
 .btn:hover {
   background-color: #8A42F2;
   color: #f9f9f9;
-}
-
-.title-container {
-  display: flex;
-  padding: 0.5rem;
-  background-color: #6c31bd;
-  width: 450px;
-  align-items: center;
-}
-.title-container h2 {
-  color: #f9f9f9;
-}
-.title-container img {
-  max-width: 40px;
 }
 
 .form {

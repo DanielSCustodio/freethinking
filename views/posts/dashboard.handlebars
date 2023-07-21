@@ -1,7 +1,41 @@
-<div class="dashboard-container">
-  <div class="titlecontainer">
-    <h2>Dashboard</h2>
-    <a href="/posts/add" class="btn">Criar Pensamento</a>
+<section>
+  <div class='create-post-container'>
+    <form action='/posts/add' method='POST'>
+      <textarea
+        name='content'
+        cols='60'
+        rows='5'
+        placeholder='Compartilhe seu pensamento'
+      ></textarea>
+      <div class='create-post-btn'>
+        <input type='submit' value='Publicar' class='btn' />
+      </div>
+    </form>
   </div>
-  <h3>Seus pensamentos</h3>
-</div>
+  <div class='dashboard-container'>
+    <div class='title-container-dashboard'>
+      <h1 class="title">Dashboard</h1>  
+    </div>
+    <ul>
+      {{#each user.Posts}}
+        <li>
+          <div class="dashboard-post">
+            <span class="label">{{this.content}}</span>
+            <span class="actions">
+              <a href="#"><i class="bi bi-pencil-square"></i></a>
+              <form action="/">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <button type="submit"><i class="bi bi-trash3"></i></button>
+              </form>
+            </span>
+          </div>
+          <div class="post-date">
+            <span>Criado em: {{this.createdAt}}</span>
+            <span>Editado em: {{this.updatedAt}}</span>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+</section>
