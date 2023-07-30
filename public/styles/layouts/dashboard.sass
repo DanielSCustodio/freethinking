@@ -8,10 +8,11 @@
   align-items: flex-start
 
   li
-    box-shadow: 1px 1px 2px variables.$border-color
+    box-shadow: 1px 1px 1px 1px variables.$border-color
     margin-bottom: 2rem
     border-radius: 4px
-    padding: 1rem 
+    padding: 1rem
+    background-color: variables.$bg-second-color
 
   .dashboard-post
     @include mixins.center-content()
@@ -32,17 +33,17 @@
 
       button
         border: 0
+        background: none
 
         &:hover
           cursor: pointer
-
 
   .label
     font-weight: 500
 
   .post-date
     display: flex
-    margin-top: 2rem 
+    margin-top: 2rem
     gap: 1rem
 
     span
