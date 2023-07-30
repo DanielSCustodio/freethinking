@@ -1,4 +1,16 @@
 <section>
+  {{#if messages.created-post}}
+    <div class='successful-access'>
+      <p>{{messages.created-post}}</p>
+    </div>
+  {{/if}}
+
+
+  {{#if messages.destroy-post}}
+  <div class='successful-access'>
+    <p>{{messages.destroy-post}}</p>
+  </div>
+  {{/if}}
   <div class='create-post-container'>
     <form action='/posts/add' method='POST'>
       <textarea
@@ -14,28 +26,30 @@
   </div>
   <div class='dashboard-container'>
     <div class='title-container-dashboard'>
-      <h1 class="title">Dashboard</h1>  
+      <h1 class='title'>Suas Publicações</h1>
     </div>
     <ul>
-      {{#each user.Posts}}
+      {{#each posts}}
         <li>
-          <div class="dashboard-post">
-            <span class="label">{{this.content}}</span>
-            <span class="actions">
-              <a href="#"><i class="bi bi-pencil-square"></i></a>
-              <form action="/">
-                <input type="hidden" name="id" value="{{this.id}}">
-                <button type="submit"><i class="bi bi-trash3"></i></button>
+          <div class='dashboard-post'>
+            <span class='label'>{{this.content}}</span>
+            <span class='actions'>
+              <a href='#'><i class='bi bi-pencil-square'></i></a>
+              <form action='/posts/remove' method="post">
+                <input type='hidden' name='id' value='{{this.id}}' />
+                <button type='submit'><i class='bi bi-trash3'></i></button>
               </form>
             </span>
           </div>
-          <div class="post-date">
+          <div class='post-date'>
             <span>Criado em: {{this.createdAt}}</span>
-            <span>Editado em: {{this.updatedAt}}</span>
           </div>
         </li>
       {{/each}}
     </ul>
+    {{#if emptyDashboard}}
+      <p>Você ainda não publicou.</p>
+    {{/if}}
   </div>
 
 </section>

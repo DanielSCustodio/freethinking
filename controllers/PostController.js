@@ -9,14 +9,24 @@ module.exports = class PostController {
   static async dashboard(req, res) {
     const { userid } = req.session;
 
-    const user = await User.findOne({
+    let user = await User.findOne({
       where: {
         id: userid,
       },
       include: Post,
     });
 
-    res.render('posts/dashboard', { user: user.get({ plain: true }) });
+    user = user.get({ plain: true });
+    let emptyDashboard = false;
+
+    if (user.Posts.length === 0) {
+      emptyDashboard = true;
+    }
+
+    res.render('posts/dashboard', {
+      posts: user.Posts.reverse(),
+      emptyDashboard,
+    });
   }
 
   static async createPostSave(req, res) {
@@ -27,7 +37,22 @@ module.exports = class PostController {
 
     try {
       await Post.create(post);
-      req.flash('created-post-success', 'Post criado com sucesso');
+      req.flash('created-post', 'Post criado com sucesso');
+      req.session.save(() => {
+        res.redirect('/posts/dashboard');
+      });
+    } catch (error) {
+      console.log('Ocorreu um erro ==>', error);
+    }
+  }
+
+  static async removePost(req, res) {
+    const { id } = req.body;
+    const { userid } = req.session;
+
+    try {
+      await Post.destroy({ where: { id: id, UserId: userid } });
+      req.flash('destroy-post', 'Post removido com sucesso');
       req.session.save(() => {
         res.redirect('/posts/dashboard');
       });
