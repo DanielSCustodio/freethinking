@@ -5,3 +5,52 @@
 .dashboard-container
   @include mixins.center-content()
   flex-direction: column
+  align-items: flex-start
+
+  li
+    box-shadow: 1px 1px 1px 1px variables.$border-color
+    margin-bottom: 2rem
+    border-radius: 4px
+    padding: 1rem
+    background-color: variables.$bg-second-color
+
+  .dashboard-post
+    @include mixins.center-content()
+    padding: 0
+
+    .actions
+      display: flex
+      gap: 1rem
+      margin-left: 2rem
+
+      .bi
+        font-size: 1.3rem
+        color: variables.$primary-color
+        transition: variables.$transition
+
+        &:hover
+          color: variables.$second-color
+
+      button
+        border: 0
+        background: none
+
+        &:hover
+          cursor: pointer
+
+  .label
+    font-weight: 500
+
+  .post-date
+    display: flex
+    margin-top: 2rem
+    gap: 1rem
+
+    span
+      color: #736e6ec0
+
+  .title-container-dashboard
+    margin-bottom: 1rem
+
+    h1
+      color: variables.$primary-color
