@@ -1,0 +1,14 @@
+  <div class='create-post-container'>
+    <h1 class="title">Edição de post</h1>
+    <form action='/posts/edit' method='POST'>
+    <input type="hidden" name="id" value="{{post.id}}">
+      <textarea
+        name='content'
+        cols='60'
+        rows='5'
+      >{{post.content}}</textarea>
+      <div class='create-post-btn'>
+        <input type='submit' value='Editar' class='btn' />
+      </div>
+    </form>
+  </div>

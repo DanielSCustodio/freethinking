@@ -8,6 +8,7 @@ module.exports = class PostController {
 
   static async dashboard(req, res) {
     const { userid } = req.session;
+    let emptyDashboard = false;
 
     let user = await User.findOne({
       where: {
@@ -17,7 +18,6 @@ module.exports = class PostController {
     });
 
     user = user.get({ plain: true });
-    let emptyDashboard = false;
 
     if (user.Posts.length === 0) {
       emptyDashboard = true;
@@ -53,6 +53,31 @@ module.exports = class PostController {
     try {
       await Post.destroy({ where: { id: id, UserId: userid } });
       req.flash('destroy-post', 'Post removido com sucesso');
+      req.session.save(() => {
+        res.redirect('/posts/dashboard');
+      });
+    } catch (error) {
+      console.log('Ocorreu um erro ==>', error);
+    }
+  }
+
+  static async updatePost(req, res) {
+    const { id } = req.params;
+
+    const post = await Post.findOne({ where: { id: id }, raw: true });
+
+    res.render('posts/edit', { post });
+  }
+
+  static async updatePostSave(req, res) {
+    const id = req.body.id;
+    const content = {
+      content: req.body.content,
+    };
+
+    try {
+      await Post.update(content, { where: { id: id } });
+      req.flash('update-post', 'Post atualizado com sucesso');
       req.session.save(() => {
         res.redirect('/posts/dashboard');
       });

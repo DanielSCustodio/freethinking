@@ -198,6 +198,7 @@ ul {
   border-radius: 4px;
   padding: 1rem;
   background-color: #dfdfdf;
+  width: 1200px;
 }
 .dashboard-container .dashboard-post {
   max-width: 1200px;
