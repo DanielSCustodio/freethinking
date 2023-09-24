@@ -5,11 +5,16 @@
     </div>
   {{/if}}
 
-
   {{#if messages.destroy-post}}
-  <div class='successful-access'>
-    <p>{{messages.destroy-post}}</p>
-  </div>
+    <div class='successful-access'>
+      <p>{{messages.destroy-post}}</p>
+    </div>
+  {{/if}}
+
+  {{#if messages.update-post}}
+    <div class='successful-access'>
+      <p>{{messages.update-post}}</p>
+    </div>
   {{/if}}
   <div class='create-post-container'>
     <form action='/posts/add' method='POST'>
@@ -34,8 +39,10 @@
           <div class='dashboard-post'>
             <span class='label'>{{this.content}}</span>
             <span class='actions'>
-              <a href='#'><i class='bi bi-pencil-square'></i></a>
-              <form action='/posts/remove' method="post">
+              <a href='/posts/edit/{{this.id}}'><i
+                  class='bi bi-pencil-square'
+                ></i></a>
+              <form action='/posts/remove' method='post'>
                 <input type='hidden' name='id' value='{{this.id}}' />
                 <button type='submit'><i class='bi bi-trash3'></i></button>
               </form>
