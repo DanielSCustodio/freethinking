@@ -18,12 +18,13 @@
   <body>
     <nav id='nav-bar'>
       <div class='container-menu'>
-        <a href='/' id='logo'>
+        <a href='/posts' id='logo'>
           <img src='/image/icon-white.svg' alt='freethinking' />
         </a>
-        <a href='/posts'><i class='bi bi-house'></i></a>
+        <h2 class="title-menu">FREETHINKING</h2>
         <ul>
           {{#if session.userid}}
+            <li><a href='/posts'>Home</a></li>
             <li><a href='/posts/dashboard'>Dashboard</a></li>
             <li><a href='/logout'>Sair</a></li>
           {{else}}

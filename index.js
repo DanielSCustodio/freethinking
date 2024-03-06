@@ -69,10 +69,10 @@ app.use((req, res, next) => {
 });
 
 //Routes
-app.use('/posts', postsRoutes);
+app.use('/posts', checkAuth, postsRoutes);
 app.use('/', authRotes);
 app.get('/', checkAuth, (req, res) => {
-  res.render('posts/home');
+  res.redirect('/posts');
 });
 //app.use('/', NotFoundController.notfound);
 
