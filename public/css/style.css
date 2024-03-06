@@ -160,6 +160,48 @@ ul {
   flex-direction: column;
 }
 
+.header-home {
+  width: 100%;
+}
+.header-home-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.header-home-form input {
+  width: 75%;
+  border-radius: 80px;
+  height: 45px;
+  padding: 0 2rem;
+}
+.header-home-form input[type=submit] {
+  width: 20%;
+  margin: 0;
+}
+
+.ordering {
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5%;
+}
+.ordering button {
+  border: none;
+  background: none;
+}
+.ordering i {
+  color: #8A42F2;
+  font-size: 22px;
+  cursor: pointer;
+}
+.ordering i:hover {
+  color: #6c31bd;
+}
+.ordering a {
+  font-weight: bold;
+}
+
 .container-body {
   min-height: 100vh;
 }
@@ -214,7 +256,7 @@ ul {
   background-color: #dfdfdf;
   width: 1200px;
 }
-.dashboard-container .dashboard-post {
+.dashboard-container .list-post {
   max-width: 1200px;
   padding-top: 6%;
   margin: 0 auto;
@@ -223,36 +265,38 @@ ul {
   align-items: center;
   padding: 0;
 }
-.dashboard-container .dashboard-post .actions {
+.dashboard-container .list-post .actions {
   display: flex;
   gap: 1rem;
   margin-left: 2rem;
 }
-.dashboard-container .dashboard-post .actions .bi {
+.dashboard-container .list-post .actions .bi {
   font-size: 1.3rem;
   color: #8A42F2;
   transition: 0.5s;
 }
-.dashboard-container .dashboard-post .actions .bi:hover {
+.dashboard-container .list-post .actions .bi:hover {
   color: #6c31bd;
 }
-.dashboard-container .dashboard-post .actions button {
+.dashboard-container .list-post .actions button {
   border: 0;
   background: none;
 }
-.dashboard-container .dashboard-post .actions button:hover {
+.dashboard-container .list-post .actions button:hover {
   cursor: pointer;
 }
 .dashboard-container .label {
   font-weight: 500;
 }
 .dashboard-container .post-date {
-  display: flex;
-  margin-top: 2rem;
-  gap: 1rem;
+  margin-top: 1rem;
 }
 .dashboard-container .post-date span {
   color: rgba(115, 110, 110, 0.7529411765);
+}
+.dashboard-container .post-author {
+  margin-top: 0.5rem;
+  font-weight: bold;
 }
 .dashboard-container .title-container-dashboard {
   margin-bottom: 1rem;
