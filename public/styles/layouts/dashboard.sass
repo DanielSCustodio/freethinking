@@ -15,7 +15,7 @@
     background-color: variables.$bg-second-color
     width: variables.$container-width
 
-  .dashboard-post
+  .list-post
     @include mixins.center-content()
     padding: 0
 
@@ -43,12 +43,16 @@
     font-weight: 500
 
   .post-date
-    display: flex
-    margin-top: 2rem
-    gap: 1rem
+    margin-top: 1rem
 
     span
       color: #736e6ec0
+  
+  .post-author
+    margin-top: 0.5rem
+    font-weight: bold
+
+    
 
   .title-container-dashboard
     margin-bottom: 1rem

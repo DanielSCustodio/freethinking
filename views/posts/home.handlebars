@@ -1,43 +1,53 @@
-<section class="container-home">
-  <div>
-    <form action="/posts" method="GET">
-      <input type="text" name="search" placeholder="Está buscando por algo?">
-      <input type="submit" value="Buscar" class="btn">
+<section class='container-home'>
+  <div class="header-home">
+    <form action='/posts' method='GET' class="header-home-form">
+      <input type='text' name='search' placeholder='Está buscando por algo?' />
+      <input type='submit' value='Buscar' class='btn' />
     </form>
-    <div>
+    <div class="ordering">
       <span>Ordenar por:</span>
 
-      <form action="/posts" method="GET">
-        <input type="hidden" name="search" value="{{this.search}}">
-        <input type="hidden" name="order" value="new">
-        <button type="submit"><i class="bi bi-arrow-up"></i></button>
+      <form action='/posts' method='GET'>
+        <input type='hidden' name='search' value='{{this.search}}' />
+        <input type='hidden' name='order' value='new' />
+        <button type='submit'><i class='bi bi-arrow-up'></i></button>
       </form>
 
-      <form action="/posts" method="GET">
-        <input type="hidden" name="search" value="{{this.search}}">
-        <input type="hidden" name="order" value="old">
-        <button type="submit"><i class="bi bi-arrow-down"></i></button>
+      <form action='/posts' method='GET'>
+        <input type='hidden' name='search' value='{{this.search}}' />
+        <input type='hidden' name='order' value='old' />
+        <button type='submit'><i class='bi bi-arrow-down'></i></button>
       </form>
-      
-      <a href="/">Limpar</a>
+
+      <a href='/'>Limpar</a>
     </div>
-  </div class="container-posts">
-  <div>
-    {{#each posts}}
-      <figure>
-        <blockquote>
-          "{{this.content}}"
-        </blockquote>
-      </figure>
-      <figure>
-        por
-        <span>
-          {{this.User.name}}
-        </span>
-      </figure>
-      <div>
-        <span>Criado em: {{this.createdAt}}</span>
-      </div>
-    {{/each}}
   </div>
+  <div class='dashboard-container'>
+    <ul>
+      {{#each posts}}
+        <li>
+          <div class='dashboard-home'>
+            <figure>
+              <blockquote>
+                "{{this.content}}"
+              </blockquote>
+            </figure>
+            <div class='post-author'>
+              <figure>
+                por
+                <span>
+                  {{this.User.name}}
+                </span>
+              </figure>
+            </div>
+
+            <div class='post-date'>
+              <span>Criado em: {{this.createdAt}}</span>
+            </div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
 </section>
