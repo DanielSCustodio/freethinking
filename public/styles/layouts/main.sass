@@ -1,0 +1,26 @@
+@use '../base/variables'
+@use '../base/base-mixins'
+
+.container-body
+  min-height: 100vh
+
+.message
+  margin: 0 auto
+  padding-top: 1rem
+  font-size: 0.8rem
+  margin: 0 3.6rem
+  color: variables.$error-color
+
+.successful-access
+  margin: 0 auto
+  text-align: center
+  padding-top: variables.$top-distance
+  max-width: 30%
+
+  p
+    padding: 1rem
+    border: 1px solid variables.$border-color
+    border-radius: 6px
+    font-weight: 800
+    font-size: 1.3rem
+    color: variables.$primary-color

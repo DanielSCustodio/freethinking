@@ -1,14 +1,43 @@
-<section class="home-container">
-  {{#if messages.message}}
-    <div class='successful-access'>
-      <p>{{messages.message}}</p>
+<section class="container-home">
+  <div>
+    <form action="/posts" method="GET">
+      <input type="text" name="search" placeholder="Está buscando por algo?">
+      <input type="submit" value="Buscar" class="btn">
+    </form>
+    <div>
+      <span>Ordenar por:</span>
+
+      <form action="/posts" method="GET">
+        <input type="hidden" name="search" value="{{this.search}}">
+        <input type="hidden" name="order" value="new">
+        <button type="submit"><i class="bi bi-arrow-up"></i></button>
+      </form>
+
+      <form action="/posts" method="GET">
+        <input type="hidden" name="search" value="{{this.search}}">
+        <input type="hidden" name="order" value="old">
+        <button type="submit"><i class="bi bi-arrow-down"></i></button>
+      </form>
+      
+      <a href="/">Limpar</a>
     </div>
-  {{/if}}
-  <p>Página inicial</p>
-  <p>Página inicial</p>
-  <p>Página inicial</p>
-  <p>Página inicial</p>
-  <p>Página inicial</p>
-  <p>Página inicial</p>
-  <p>Página inicial</p>
+  </div class="container-posts">
+  <div>
+    {{#each posts}}
+      <figure>
+        <blockquote>
+          "{{this.content}}"
+        </blockquote>
+      </figure>
+      <figure>
+        por
+        <span>
+          {{this.User.name}}
+        </span>
+      </figure>
+      <div>
+        <span>Criado em: {{this.createdAt}}</span>
+      </div>
+    {{/each}}
+  </div>
 </section>
