@@ -1,6 +1,6 @@
-# Freethinking Rede Social
+# Freethinking
 
-Rede social para compartilhar conteúdo em forma de texto.
+Aplicação para compartilhar conteúdo em forma de texto.
 
 Em construção...
 
