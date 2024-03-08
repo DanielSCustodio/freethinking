@@ -23,9 +23,25 @@ module.exports = class PostController {
       order: [['createdAt', order]],
     });
 
-    let seacrhLenght = posts.length;
-    posts = posts.map((result) => result.get({ plain: true }));
-    res.render('posts/home', { posts, search, seacrhLenght });
+    posts = posts.map((result) => {
+      const post = result.get({ plain: true });
+
+      // Função para adicionar zeros à esquerda para números menores que 10
+      const addLeadingZero = (number) => (number < 10 ? `0${number}` : number);
+
+      const createdAt = new Date(post.createdAt);
+      const formattedDate =
+        addLeadingZero(createdAt.getDate()) +
+        '/' +
+        addLeadingZero(createdAt.getMonth() + 1) +
+        '/' +
+        createdAt.getFullYear();
+      post.createdAt = formattedDate;
+      return post;
+    });
+
+    let seacrhLength = posts.length;
+    res.render('posts/home', { posts, search, seacrhLength });
   }
 
   static async dashboard(req, res) {
@@ -40,6 +56,22 @@ module.exports = class PostController {
     });
 
     user = user.get({ plain: true });
+
+    user.Posts = user.Posts.map((post) => {
+      // Função para adicionar zeros à esquerda para números menores que 10
+      const addLeadingZero = (number) => (number < 10 ? `0${number}` : number);
+
+      const createdAt = new Date(post.createdAt);
+      const formattedDate =
+        addLeadingZero(createdAt.getDate()) +
+        '/' +
+        addLeadingZero(createdAt.getMonth() + 1) +
+        '/' +
+        createdAt.getFullYear();
+
+      post.createdAt = formattedDate;
+      return post;
+    });
 
     if (user.Posts.length === 0) {
       emptyDashboard = true;
