@@ -338,7 +338,9 @@ ul {
   flex-direction: column;
 }
 .create-post-container form textarea {
-  background: none;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 2rem;
   border: none;
   border-bottom: 1px solid rgba(177, 131, 242, 0.3921568627);
   overflow: hidden;
