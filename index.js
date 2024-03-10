@@ -14,7 +14,7 @@ const postsRoutes = require('./routes/postsRoutes');
 const authRotes = require('./routes/authRotes');
 
 //middleware
-const { checkAuth } = require('./helpers/auth');
+const { checkAuth } = require('./middleware/helpers/auth');
 
 const app = express();
 

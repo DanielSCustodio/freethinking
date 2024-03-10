@@ -1,4 +1,5 @@
 <section class='container-home'>
+
   <div class='header-home'>
     <form action='/posts' method='GET' class='header-home-form'>
       <input type='text' name='search' placeholder='Está buscando por algo?' />
@@ -22,11 +23,16 @@
       <a href='/'>Limpar</a>
     </div>
   </div>
+  {{#if messages.message}}
+    <div class='successful-access'>
+      <p>{{messages.message}}</p>
+    </div>
+  {{/if}}
   <div class='dashboard-container'>
     <div class="title-home">
       {{#if search}}
         <h1 class='title'>Resultado da buca por: <span>{{search}}</span></h1>
-        <h3>{{seacrhLenght}} resultado(s) encontrados.</h3>
+        <h3>{{seacrhLength}} resultado(s) encontrados.</h3>
       {{else}}
         <h1 class='title'>Feed</h1>
       {{/if}}
