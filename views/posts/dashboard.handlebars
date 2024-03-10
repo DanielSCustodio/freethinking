@@ -1,4 +1,10 @@
 <section>
+  {{#if messages.validation}}
+    <div class='error-message'>
+      <p>{{messages.validation}}</p>
+    </div>
+  {{/if}}
+
   {{#if messages.created-post}}
     <div class='successful-access'>
       <p>{{messages.created-post}}</p>
@@ -16,6 +22,7 @@
       <p>{{messages.update-post}}</p>
     </div>
   {{/if}}
+
   <div class='create-post-container'>
     <form action='/posts/add' method='POST'>
       <textarea
@@ -29,6 +36,7 @@
       </div>
     </form>
   </div>
+  
   <div class='dashboard-container'>
     <div class='title-container-dashboard'>
       <h1 class='title'>Suas Publicações</h1>

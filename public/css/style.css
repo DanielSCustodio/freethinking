@@ -224,19 +224,23 @@ ul {
   color: #dd4747;
 }
 
-.successful-access {
+.successful-access, .error-message {
   margin: 0 auto;
   text-align: center;
   padding-top: 6%;
   max-width: 30%;
 }
-.successful-access p {
+.successful-access p, .error-message p {
   padding: 1rem;
   border: 1px solid rgba(177, 131, 242, 0.3921568627);
   border-radius: 6px;
   font-weight: 800;
   font-size: 1.3rem;
   color: #8A42F2;
+}
+
+.error-message p {
+  color: #dd4747;
 }
 
 .auth-container {
@@ -334,7 +338,9 @@ ul {
   flex-direction: column;
 }
 .create-post-container form textarea {
-  background: none;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 2rem;
   border: none;
   border-bottom: 1px solid rgba(177, 131, 242, 0.3921568627);
   overflow: hidden;
